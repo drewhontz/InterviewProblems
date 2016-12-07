@@ -1,0 +1,21 @@
+How would you test a boolean method, canMoveTo(int x, int y) for chess pieces in a chess game?
+
+Are we doing Black Box or White Box testing?
+-Assuming both
+Who will use it? Why? How?
+-Users playing chess during the game will need to move their pieces to available spaces
+What are the bounds of use?
+-Pieces must stay on the board
+What are the failure conditions?
+-Piece cannot move to the coord because of the restrictions placed on that piece. I.e. pawn can't move clear across the board in one move
+-Piece cannot move to a spot occupied by a piece on the same team
+-Piece cannot move off the board
+
+Testing Methodology
+- Test each type of piece on an empty board. Make sure they can move within their bounds. I.e. can a pawn move 2 forward from it's starting location, can it move one forward when the space is unoccupied in front of it?
+- Since queen's have little regulation on where they can move, what happens if you give it a coordinate not on the board (outside 8x8?)
+- What happens when the piece tries to occupy a space occupied by an enemy or an ally?
+- What happens when the piece tries to move outside the board?
+- What happens to pawns when they reach the opposing side of the board?
+- How will moving be affected if the game state is invalid? (board isn't perfect, the teams are offset, etc)
+- How do we handle bad inputs? Out of range, or negative values, or wrong types
