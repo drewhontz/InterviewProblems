@@ -1,0 +1,8 @@
+Sorts to Implement	
+	Mergesort
+	Heapsort
+	Bubblesort
+	Insertion Sort
+	Selection Sort
+	Radix sort
+	bucket sort
