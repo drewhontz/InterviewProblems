@@ -6,9 +6,12 @@
               - a string that has aA to test previous case
               - a string that is not shorter when compressed
 
-    Brainstorm -
+    Brainstorm - Use a runner method to compare the char to its previous char in
+    the string, if they match, update the count. If they don't, append the
+    character to a return string alongside the current count. Compare the answer
+    to the input string and return the shorter option
 
-    Runtime Analysis -
+    Runtime Analysis - O(N) time (string builder append is O(1)) and O(N) space worst case
 
  */
 
