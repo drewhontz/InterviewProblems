@@ -1,0 +1,49 @@
+Step 1) Who, What, Where, When, Why, How
+Step 2) Define Core Objects
+Step 3) Analyze Relationships
+Step 4) Investigate Actions
+
+1) Not really relevant here; can't get the context of how this will be used
+
+2) Array for storage of items, head, tail, iterator, pointer for indicating head?
+
+3) Tail must connect to head, rotate shouldn't change structure but should move a pointer to the next element for the purposes of all other functions
+
+4) Add, remove, get size, copy, empty, check for membership, and iterate.
+ Add - add at front, end, provided index
+ Remove - front, end, occurrence of item, at index
+ Size - return size
+ Empty - clear out all elements
+ Membership - Boolean if item is in, Int with index of first occurrence
+ Iterate - should support for... in..
+
+
+public class CircularArray {
+  private int head;
+  private int tail;
+  private Object[] data;
+
+  // Sets element to the tail of the Circular array
+  public void append(Object o){}
+
+  // Inserts object at given index
+  public void insert(int index, Object o){}
+
+  // Removes first occurrence of the object
+  public int remove(Object o){}
+
+  // Removes the object at the given index
+  public void remove(int index){}
+
+  // Moves the head and tail pointer one element up
+  public void rotate(){}
+
+  // Returns the size of the array before the cycle begins
+  public int size(){}
+
+  public Iterator iterate(){}
+
+}
+
+
+FOR NEXT TIME IMPLEMENT ITERABLE AND CREATE PRIVATE CLASS FOR ITERABLE!!!
