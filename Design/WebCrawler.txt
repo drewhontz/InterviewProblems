@@ -1,0 +1,27 @@
+Tools: Horizontal/Vertical Scaling, Load Balancer, Database Denormalization and NoSQL, Database partitioning, Vertical Partitioning, Key-Based partitioning, and Directory Based partition, Caching, Asynchronous Processing and Queues, Network Metrics
+
+1) Scope the problem
+2) Make reasonable assumption
+3) Draw the major components
+4) Identify the key issues
+5) Redesign for the key issues
+
+Question: When creating a web crawler, how would you avoid infinite loops?
+
+Follow-up questions:
+ Scope: What is the web crawler supposed to be crawling? How many sites per day can we assume? What is the total number of sites to be visited? I.e. I would want to use a marker on the url/domain to say we have already been here, next link or whatever our method is.
+
+ Assumptions: We could exchange a slower write time for a faster read; in essence, we would somehow store the URL we are visiting, or place it in a queue to be stored, so long as when we visit a new site, we could quickly retrieve. Hashmap sounds like a good idea for storage.
+
+ Drawing: (see notes)
+  Features:
+    - Data Structure that holds a 'key', a 'key' could be a URL, content (such as an article title), or some combination of both?
+    - DS should provide fast lookup, (maybe at the expensive of writing)
+    - Expiry mechanism; if we want to be able to rescan pages later for new/updated content we need to remove entries from our DS
+
+ Identify Key Issues: How will we shard this data if it can't be stored on one machine? Is there an expiry date? I.e. Will we run this process again tomorrow and not be able to view the same site because they are 'marked' in our map. Is the URL a good key to mark or should it be an article title or piece of content? Or some combination of both?
+
+ Redesign for the key issues:
+  - Implement a combination signature of URL and content
+  - Implement a method of determining 'similarity' i.e. do they share a similar domain and article title
+  - At a certain similarity point, we either decide to visit the content and ingest it's links, or we add it as a low priority in the queue
