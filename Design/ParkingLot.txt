@@ -1,0 +1,53 @@
+Step 1) 6 W's
+Step 2) List the components
+Step 3) Find the relationships btwn components
+Step 4) Investigate Actions
+
+Parking Lot
+
+1)- For Who?
+  - What kind of lot is it?
+  - Where is the lot?
+  - When is it being used?
+  - Why are we building it?
+  - How will it be used?
+
+2) An amount of space, divisions between stalls to accommodate vehicles
+(Optional) An arm to secure those trying to leave without payment
+(Optional) Multiple floors/levels for the parking lot
+(Optional) some form of teller or honor based drop box for payment
+
+Spaces, Lot, Cars, Indicator, Levels, Payment Collection
+
+Payment collection may or may not happen, it may expire as opposed to 'count up'
+
+3) Lots have levels (even if it is just one) and payment collection
+   Levels have spaces
+   Spaces may have cars
+
+public class Lot {
+  private Level[] level;
+  private PaymentCollection pc;
+
+  public int size(){}
+
+  public boolean isFull(){}
+
+  private class Level{
+    private int spaces;
+
+    public int size(){}
+
+    public boolean isFull(){}
+
+  }
+}
+
+public interface PaymentCollection {
+
+  public void collectPayment(int spotNumber){}
+
+  public void isPaid(int spotNumber){}
+
+
+}
