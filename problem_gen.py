@@ -18,4 +18,4 @@ def select_x_problems(x=5, set=generate_problem_list()):
         p.append(set[randint(0, size)])
     return p
 
-print select_x_problems()
+print select_x_problems(x=3)
