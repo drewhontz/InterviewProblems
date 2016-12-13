@@ -1,0 +1,3 @@
+Close all requests from building 11
+
+update requests set status='closed' where (select requestid from requests where aptid in (SELECT aptid FROM APTS WHERE BUILDID==11))
